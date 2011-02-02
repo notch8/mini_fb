@@ -583,6 +583,7 @@ module MiniFB
         end
         params["access_token"] = "#{(access_token)}"
         params["metadata"] = "1" if options[:metadata]
+        params["actions"] = params["actions"].to_json if params["actions"]
         options[:params] = params
         options[:method] = :post
         return fetch(url, options)
